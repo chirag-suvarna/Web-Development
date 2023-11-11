@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Link to Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap">
+
+    <title>Weather App</title>
+</head>
+
+<body>
+    <!-- Main container for the entire page -->
+    <div class="container">
+        <!-- Container for the search bar -->
+        <div class="container-search">
+            <div class="search-bar">
+                <!-- Input for entering city name -->
+                <input type="text" id="cityInput" placeholder="Enter city name">
+                <!-- Button to trigger the search -->
+                <button id="searchButton">Search</button>
+            </div>
+        </div>
+        <!-- Container for weather information -->
+        <div class="container-content">
+            <!-- Container for additional weather details -->
+            <div class="container-other">
+                <!-- Left side details -->
+                <div class="left">
+                    <img class="icon" src="img/icon/humidity-icon.png" alt="" srcset=""><span id="humidity"
+                        style="font-family: 'Lilita One', cursive;font-size: 20px;"></span>
+                    <img class="icon" src="img/icon/mintemp-icon.png" alt="" srcset=""><span id="min_temp"
+                        style="font-family: 'Lilita One', cursive;font-size: 20px;"></span>
+                    <img class="icon" src="img/icon/maxtemp-icon.png" alt="" srcset=""><span id="max_temp"
+                        style="font-family: 'Lilita One', cursive;font-size: 20px;"></span>
+                    <img class="icon" src="img/icon/air-index.png" alt="" srcset=""> <span id="overall_aqi"
+                        style="font-family: 'Lilita One', cursive;font-size: 20px;"></span>
+                </div>
+                <!-- Right side details -->
+                <div class="right">
+                    <img class="icon" src="img/icon/windspeed-icon.png" alt="" srcset=""> <span id="wind_speed"
+                        style="font-family: 'Lilita One', cursive;font-size: 20px;"></span>
+                    <img class="icon" src="img/icon/winddirection-icon.png" alt="" srcset=""><span id="wind_degrees"
+                        style="font-family: 'Lilita One', cursive;font-size: 20px;"></span>
+                    <img class="icon" src="img/icon/sunrise-icon.png" alt="" srcset=""><span id="sunrise"
+                        style="font-family: 'Lilita One', cursive;font-size: 20px;"></span>
+                    <img class="icon" src="img/icon/sunset-icon.png" alt="" srcset=""> <span id="sunset"
+                        style="font-family: 'Lilita One', cursive;font-size: 20px;"></span>
+                </div>
+
+            </div>
+            <!-- Container for temperature information -->
+            <div class="container-temperature">
+                <div class="weather-icon">
+                    <img id="weather-icon" src="" alt="Weather Icon">
+                </div>
+                <!-- Displayed city name -->
+                <span id="cityoutput"
+                    style="font-family: 'Lilita One', cursive;font-size: 20px;margin-left: 30px;">Swansea</span>
+                <!-- Displayed temperature -->
+                <span id="temp" style="font-family: 'Lilita One', cursive;font-size: 60px;margin-left: 50px;"></span>
+            </div>
+
+
+        </div>
+    </div>
+
+    </div>
+
+
+
+    <!-- Include the external JavaScript file -->
+    <script src="js/weatherapi.js"></script>
+</body>
+
+</html>
