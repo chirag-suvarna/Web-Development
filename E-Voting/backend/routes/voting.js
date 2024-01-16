@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-
+const User = require('../models/userModel')
 
 // Get all voters
 router.get('/',(req,res)=>{
@@ -13,8 +13,15 @@ router.get('/:id',(req,res)=>{
 })
 
 //post a voter
-router.post('/',(req,res)=>{
-    res.json({msg:'Post a voter'});
+router.post('/',async(req,res)=>{
+    const{first_name,last_name,contact_no,email_id,password,date_of_birth,is_verfied,is_admin}=req.body
+    try{
+        const user = await User.create({first_name,last_name,contact_no,email_id,password,date_of_birth,is_verfied,is_admin})
+        res.status(200).json(user)
+    }
+    catch(error){
+        res.status(400).json({error: error.message})
+    }
 })
 
 //delete a voter

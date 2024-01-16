@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express')
-const votingRoutes = require('./Routes/voting')
+const votingRoutes = require('./routes/voting')
+const mongoose = require('mongoose')
 
 
 //express app
@@ -16,8 +17,16 @@ app.use((req,res,next)=>{
 // routes
 app.use('/api/voting',votingRoutes)
 
-
-//listen for requests 
+//connect db
+mongoose.connect(process.env.MONG_URI)
+.then(()=>{
+    //listen for requests 
 app.listen(process.env.PORT,()=>{
     console.log('listen on port',process.env.PORT)
 })
+
+})
+.catch((error)=>{
+    console.log(error)
+})
+
