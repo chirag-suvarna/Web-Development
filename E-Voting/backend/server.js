@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express')
-const votingRoutes = require('./routes/voting')
+const electionRoutes = require('./routes/electionRoutes')
+const userRoutes = require('./routes/userRoutes')
 const mongoose = require('mongoose')
 
 
@@ -15,7 +16,8 @@ app.use((req,res,next)=>{
 })
 
 // routes
-app.use('/api/voting',votingRoutes)
+app.use('/api/user',userRoutes)
+app.use('/api/election',electionRoutes)
 
 //connect db
 mongoose.connect(process.env.MONG_URI)
